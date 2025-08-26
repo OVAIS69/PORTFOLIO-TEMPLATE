@@ -1,0 +1,680 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+::root{
+  --bg:#0e0f12;
+  --text:#e6e6e6;
+  --muted:#a0a0a0;
+  --card:#15171b;
+  --accent:#7c5cff;
+  --accent-2:#00d4ff;
+}
+:root{
+  --bg:#ffffff;
+  --text:#1B1B1B;
+  --muted:#555555;
+  --card:#f6f6f6;
+  --accent:#f78c00;
+  --accent-2:#f78c00;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto; background:var(--bg); color:var(--text);}
+a[href^="#"], a.btn{scroll-behavior:smooth}
+.back-to-top{position:fixed;right:16px;bottom:16px;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#111;color:#fff;border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 24px rgba(0,0,0,.15);opacity:.0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:120}
+.back-to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:#ffffff;border-bottom:1px solid #eaeaea}
+nav .nav_logo img{height:36px;width:auto}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{color:var(--muted)}
+nav .contact_btn{padding:10px 16px;border:1px solid rgba(0,0,0,.12);border-radius:10px;color:var(--text);background:#ffffff}
+
+/* Hide hamburger on desktop by default */
+.hamburger{display:none; border:none; background:transparent; cursor:pointer}
+
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:60px 28px 40px;}
+.hero h2{font-size:12px;letter-spacing:.24em;color:var(--accent-2);opacity:.9;margin-bottom:10px}
+.hero h1{font-size:clamp(28px,4.2vw,44px);line-height:1.1;margin-bottom:14px;}
+.hero h1 .char{display:inline-block;will-change:transform,opacity}
+.hero p{color:var(--muted);max-width:56ch}
+.hero-cta{margin-top:20px;display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0d10;border:none}
+.btn.secondary{background:transparent;color:var(--text)}
+.hero-art{justify-self:end;filter:drop-shadow(0 10px 24px rgba(0,0,0,.6))}
+
+.services{padding:50px 24px}
+.services h2{font-size:28px;margin-bottom:22px}
+.services .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.services .card{background:#ffffff;padding:22px;border:1px solid #eaeaea;border-radius:16px}
+.services .card{transition:transform .2s ease, box-shadow .2s ease}
+.services .card:hover{transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,.08)}
+.services .card i{font-size:22px;color:var(--accent)}
+.services .card h3{margin:12px 0 8px}
+.services .card p{color:var(--muted)}
+
+.section-1{padding:40px 28px 60px}
+.section-1 .section-1-content{max-width:900px;margin:700px auto 0 auto;text-align:center;position:relative;z-index:1;display:block;clear:both}
+.section-1 .section-1-content, .section-1 .section-1-content *{position:static !important; left:auto !important; top:auto !important; transform:none !important}
+.section-1 .line{width:100px;height:3px;background:var(--accent);border-radius:2px;margin:0 auto 12px}
+.section-1 .line{transform:scaleX(0.2);transform-origin:center}
+.section-1 h1{opacity:0}
+
+.work{padding:34px 24px}
+.work h2{font-size:28px;margin-bottom:18px}
+.work-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.work-card{background:#ffffff;border:1px solid #eaeaea;border-radius:14px;overflow:hidden}
+.work-card{transition:transform .2s ease, box-shadow .2s ease}
+.work-card:hover{transform:translateY(-4px); box-shadow:0 10px 20px rgba(0,0,0,.08)}
+.work-card span{display:block;padding:10px 12px;color:var(--muted)}
+
+.dev-section-visual{padding:36px 24px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;align-items:center}
+.dev-section-visual .video-box{border-radius:16px;overflow:hidden;border:1px solid #eaeaea}
+.dev-section-visual .content h2{color:var(--accent-2);font-size:14px;letter-spacing:.22em;margin-bottom:8px}
+.dev-section-visual .content h1{font-size:32px;margin-bottom:10px}
+.dev-section-visual .content p{color:var(--muted)}
+
+.dev-testimonials{padding:50px 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:center}
+.dev-testimonials .swiper{background:#ffffff;border:1px solid #eaeaea;border-radius:16px;padding:16px}
+.dev-testimonials .testi-copy h2{color:var(--accent);font-size:14px;letter-spacing:.22em;margin-bottom:8px}
+.dev-testimonials .testi-copy h1{font-size:28px;margin-bottom:8px}
+.dev-testimonials .testi-copy p{color:var(--muted)}
+
+.dev-faq{padding:40px 28px}
+.faq-container{border-top:1px solid #eaeaea}
+.faq-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid #eaeaea;cursor:pointer}
+.faq-row h1{font-size:18px}
+.faq-row .icon{color:var(--muted)}
+.faq-row .faq-answer{grid-column:1/-1;color:var(--muted);display:none;padding-top:6px}
+.faq-row.open .faq-answer{display:block}
+
+.contact{padding:60px 28px}
+.contact-inner{background:linear-gradient(135deg,rgba(124,92,255,.15),rgba(0,212,255,.12));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px;text-align:center}
+.contact-inner h2{font-size:30px;margin-bottom:8px}
+.contact-inner p{color:var(--muted);margin-bottom:16px}
+
+.footer{padding:28px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #eaeaea;color:var(--muted);background:#ffffff}
+.footer ul{display:flex;gap:16px;list-style:none}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr;}
+  .hero-art{order:-1;justify-self:center}
+  .work-grid{grid-template-columns:repeat(2,1fr)}
+  .services .grid{grid-template-columns:1fr}
+  .dev-section-visual{grid-template-columns:1fr}
+  .dev-testimonials{grid-template-columns:1fr}
+}
+
+@media (max-width:768px){
+  nav{padding:14px 16px}
+  nav ul{gap:14px}
+  .hero{padding:40px 16px}
+  .hero h1{font-size:clamp(26px,6vw,34px)}
+  .services{padding:40px 16px}
+  .work{padding:30px 16px}
+  .work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dev-section-visual{padding:30px 16px}
+  .dev-testimonials{padding:30px 16px}
+  .contact{padding:40px 16px}
+}
+
+@media (max-width:480px){
+  nav ul{display:none}
+  .hero{padding:32px 14px}
+  .hero h1{font-size:clamp(22px,7.2vw,28px)}
+  .services .grid{grid-template-columns:1fr}
+  .work-grid{grid-template-columns:1fr}
+  .contact-inner h2{font-size:24px}
+  .section-5 .content-section-5 h1{font-size:clamp(16px,6vw,20px)}
+  .section-5 .content-section-5 p{font-size:12px}
+}
+
+/* Developer hero mobile structure */
+@media (max-width:768px){
+  .herobox{padding:28px 16px;text-align:center}
+  .herobox h2{font-size:12px;letter-spacing:.22em;margin-bottom:8px}
+  .herobox h1{font-size:clamp(22px,6.5vw,30px);margin-bottom:10px}
+  .herobox > a{display:inline-block;padding:12px 16px;border:1px solid #eaeaea;border-radius:10px;color:#1b1b1b;background:#fff}
+  .herobox-auto-slider{margin-top:16px}
+  /* Enlarge logo strip slightly on mobile */
+  .herobox-auto-slider{width:60% !important;height:120px !important;bottom:6% !important}
+  .herobox-slider-holder{width:170% !important}
+  .herobox-slider-holder-1{width:20% !important}
+}
+
+/* Hero further refinements */
+@media (max-width:768px){
+  .herobox{gap:8px}
+  .herobox h1{line-height:1.2; max-width:28ch; margin-left:auto; margin-right:auto}
+}
+@media (max-width:480px){
+  .herobox{padding:22px 14px}
+  .herobox h1{font-size:clamp(20px,7vw,26px); max-width:30ch}
+  .herobox > a{padding:10px 14px}
+  .herobox-auto-slider{width:68% !important;height:100px !important}
+}
+
+/* Section 1 cards responsive grid */
+@media (max-width:1024px){
+  .section-1 .card-container{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .section-1 .card-container > *{width:100%}
+}
+@media (max-width:600px){
+  .section-1 .card-container{grid-template-columns:1fr}
+  .section-1 .card-container img{width:100%;height:auto;display:block}
+}
+/* Section 1 text sizing for mobile */
+@media (max-width:768px){
+  .section-1{padding:20px 16px}
+  .section-1 h2{font-size:14px; letter-spacing:.18em; margin-top:10px; text-align:center}
+  .section-1 h1{font-size:clamp(20px,5.8vw,26px); line-height:1.2; text-align:center; margin:8px auto; max-width:28ch}
+  .section-1 p{font-size:14px; line-height:1.55; text-align:center; margin:8px auto; max-width:50ch}
+  .section-1 p.p1{font-size:13px}
+}
+@media (max-width:480px){
+  .section-1 h1{font-size:clamp(18px,6.6vw,22px); max-width:30ch}
+  .section-1 p{font-size:13px; max-width:56ch}
+  .section-1 p.p1{font-size:12px; line-height:1.6}
+}
+
+/* Strong structural overrides for Section 1 on mobile */
+@media (max-width:768px){
+  .section-1{height:auto; min-height: auto; padding: 8px 0 16px}
+  .section-1 .card-container{position:static !important; height:auto !important; top:auto !important; display:grid !important; grid-template-columns:1fr !important; column-gap:6px; row-gap:14px}
+  .section-1 .card-container > *{position:static !important; height:auto !important}
+  .section-1 .card-container img{border-radius:12px}
+  .section-1 h2,
+  .section-1 h1,
+  .section-1 p{position:static; left:auto; top:auto}
+  .section-1 .line{position:static; width:120px; height:3px; margin:10px auto}
+}
+
+/* Remove vertical gaps between sections on mobile */
+@media (max-width:768px){
+  .services, .work, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9, .contact { margin-top: 0; margin-bottom: 0; }
+  .services, .work, .contact { padding-top: 8px; padding-bottom: 8px; }
+}
+
+/* Collapse fixed-height sections from designer layout on mobile */
+@media (max-width:768px){
+  .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9{ height:auto !important; min-height:auto !important; }
+}
+
+/* (reverted) Removed fixed 200px min-height for mobile sections */
+
+/* Section 1 cards: single column on mobile, keep all items visible */
+@media (max-width:768px){
+  .section-1 .card-container{grid-template-columns:1fr !important; column-gap:6px !important; row-gap:14px !important; justify-items:stretch}
+  .section-1 .card-container > *{overflow:hidden; border-radius:10px; width:100%; max-width:none}
+  .section-1 .card-container img{width:100%; height:auto !important; object-fit: cover; transition:.5s ease}
+  .section-1 .card-container > *:hover img{transform:scale(1.05)}
+}
+
+/* Give more breathing room to section-1 content on mobile */
+@media (max-width:768px){
+  .section-1 h2{margin-top:16px}
+  .section-1 h1{margin-top:8px}
+  .section-1 p{margin-top:8px}
+}
+
+/* slightly larger phones: can use two columns if needed for width */
+@media (min-width:480px) and (max-width:600px){
+  .section-1 .card-container{grid-template-columns:1fr}
+}
+
+@media (max-width:360px){
+  .section-1 .card-container{gap:8px}
+  .section-1 .card-container > *{max-width:300px}
+}
+
+/* Section 2 carousel: make slides horizontally scrollable on mobile */
+@media (max-width:768px){
+  .section-2 .carousel-wrapper{overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 8px}
+  .section-2 .slides-holder{display:flex;gap:14px;width:max-content}
+  .section-2 .slide{min-width:260px;max-width:82vw;scroll-snap-align:start;border-radius:12px;overflow:hidden}
+  .section-2 .slide img{display:block}
+}
+
+/* Section 2: enhance touch scroll and spacing on phones */
+@media (max-width:768px){
+  .section-2 .carousel-wrapper{-webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .section-2 .carousel-wrapper::-webkit-scrollbar{display:none}
+  .section-2 h1{font-size:clamp(22px,6vw,28px)}
+}
+
+/* Section 2: ensure strong contrast and visibility on mobile */
+@media (max-width:900px){
+  .section-2{background-color:#1B1B1B !important}
+  .section-2 h1{color:#ffffff !important}
+}
+
+/* Section 2: force visibility and stacking on mobile */
+@media (max-width:900px){
+  .section-2{position:relative; overflow:visible; z-index:5; padding-top:18px; padding-bottom:18px}
+  .section-2 .slides-holder{position:static}
+  .section-2 .slide img{position:static; height:100%;}
+}
+
+/* Section 2: ensure enough height for Latest Projects on mobile */
+@media (max-width:768px){
+  .section-2{min-height:480px}
+  .section-2 .carousel-wrapper{height:260px}
+  .section-2 .slide{height:100%}
+}
+@media (max-width:480px){
+  .section-2{min-height:420px}
+  .section-2 .carousel-wrapper{height:220px}
+}
+
+/* Section 5 video/content stack */
+@media (max-width:768px){
+  .section-5{display:grid;grid-template-columns:1fr;gap:18px;padding:24px 16px}
+  .section-5 .content-section-5 h1{font-size:clamp(18px,5.2vw,22px); line-height:1.25; width:100%}
+  .section-5 .content-section-5 p{font-size:12.5px; line-height:1.55; width:100%}
+  .section-5 .video-box video{width:100%;height:auto;display:block}
+}
+
+/* Section 8 stack */
+@media (max-width:768px){
+  .section-8{display:grid;grid-template-columns:160px 1fr;column-gap:18px;row-gap:12px;align-items:start;padding:16px}
+  /* Make swiper small and to the left */
+  .swiper{position:static; width:160px; height:200px; left:auto; top:auto; transform:none; margin-top:4px}
+  .section-8 .content-section-8{position:static; width:auto; right:auto; top:auto; transform:none; padding-left:8px}
+  .section-8 .content-section-8 h2{font-size:10px; letter-spacing:.18em}
+  .section-8 .content-section-8 h1{font-size:clamp(18px,5.5vw,22px); line-height:1.25; overflow-wrap:anywhere; word-break:break-word; hyphens:auto}
+  .section-8 .content-section-8 p{font-size:12px; line-height:1.55; width:100%; overflow-wrap:anywhere; word-break:break-word; hyphens:auto}
+}
+
+@media (max-width:480px){
+  /* Stack vertically on very small screens to avoid text wrapping issues */
+  .section-8{grid-template-columns:1fr; row-gap:14px; padding:16px}
+  .swiper{width:180px; height:200px; justify-self:center; margin-bottom:6px}
+  .section-8 .content-section-8{width:100%; text-align:left; padding-left:2px}
+  .section-8 .content-section-8 h2{font-size:9px; letter-spacing:.16em}
+  .section-8 .content-section-8 h1{font-size:clamp(15px,5.8vw,18px); line-height:1.22; max-width:100%}
+  .section-8 .content-section-8 p{font-size:11.5px; line-height:1.5; max-width:100%}
+}
+
+/* Section 9 FAQ tighten */
+@media (max-width:600px){
+  .section-9 .section-9-container{padding:0 16px}
+  .section-9 .row-section-9 h1{font-size:16px}
+}
+
+/* Footer stack on mobile */
+@media (max-width:600px){
+  .footer{flex-direction:column;gap:8px;text-align:center}
+}
+
+/* Extra-tight mobile adjustments without affecting desktop */
+@media (max-width:600px){
+  .hero p{font-size:14px}
+  .btn{padding:10px 14px}
+  .services .card{padding:16px}
+  .services h2,.work h2{font-size:22px}
+  .work-grid{gap:10px}
+  .work-card span{font-size:12px}
+  .dev-section-visual{gap:14px}
+  .dev-section-visual .content h1{font-size:22px; line-height:1.2}
+  .dev-section-visual .content p{font-size:13px; line-height:1.5}
+  .dev-testimonials{grid-template-columns:1fr;gap:14px}
+  .dev-testimonials .swiper{padding:12px}
+  .faq-row h1{font-size:16px}
+}
+
+@media (max-width:360px){
+  .hero{padding:24px 12px}
+  .hero h1{font-size:20px; line-height:1.2}
+  .hero p{font-size:12.5px; line-height:1.5}
+  .services .card{padding:14px}
+  .work-grid{grid-template-columns:1fr;gap:8px}
+  .btn{padding:9px 12px}
+}
+
+/* Stronger mobile typography scaling and text wrapping */
+@media (max-width:768px){
+  h1, .hero h1, .section-5 .content-section-5 h1, .section-8 .content-section-8 h1 { word-break: break-word; overflow-wrap: anywhere; hyphens: auto; }
+  p { line-height: 1.55; }
+}
+
+/* Small phones: keep all cards visible; adjust logo strip sizing */
+@media (max-width:480px){
+  .herobox-auto-slider{width:70% !important;height:110px !important}
+  .herobox-slider-holder{width:180% !important}
+  .herobox-slider-holder-1{width:22% !important}
+}
+
+/* Tighter Section 2 slides for phones */
+@media (max-width:480px){
+  .section-2 .slides-holder{ gap:10px }
+  .section-2 .slide{ min-width: 180px }
+}
+
+/* Footer tighter on phones */
+@media (max-width:480px){
+  .footer{padding:10px 14px}
+  .footer p{font-size:18px}
+  .footer ul li a{font-size:14px}
+}
+
+/* Give a bit more breathing room to content sections on mobile */
+@media (max-width:768px){
+  .section-5{min-height:520px}
+  .section-8{min-height:520px}
+  .contact{min-height:480px}
+}
+
+/* Light theme overrides for designer sections included on developer page */
+body .section-2{background-color:#ffffff}
+body .section-2 h1{color:var(--text)}
+body .section-2 .left-button,
+body .section-2 .right-button{border:2px solid var(--text); color:var(--text)}
+body .section-2 .left-button::before,
+body .section-2 .right-button::before{background-color:var(--text)}
+body .section-2 .left-button:hover i,
+body .section-2 .right-button:hover i{color:#ffffff}
+
+/* Hide mobile-only swipe hint on desktop */
+.section-2 .swipe-hint{display:none}
+
+/* Contact page (light theme) */
+.contact-hero{padding:60px 28px 20px;text-align:center}
+.contact-hero h2{font-size:12px;letter-spacing:.24em;color:var(--accent-2);margin-bottom:8px}
+.contact-hero h1{font-size:40px;margin-bottom:10px;color:var(--text)}
+.contact-hero p{color:var(--muted)}
+.contact-hero p a{color:var(--accent)}
+
+.contact-page{padding:30px 28px 60px}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.contact-form{background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:22px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form .field{display:grid;gap:6px;margin-bottom:12px}
+.contact-form label{font-weight:600;color:var(--text)}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{padding:12px 12px;border:1px solid #e1e1e1;border-radius:10px;background:#fafafa;color:#1b1b1b}
+.contact-form textarea{resize:vertical}
+.contact-form .submit-btn{margin-top:8px}
+.contact-form .form-note{margin-top:8px;color:var(--muted);font-size:14px}
+
+.contact-aside{display:grid;gap:16px}
+.contact-aside .card{background:#fff;border:1px solid #eaeaea;border-radius:16px;padding:18px}
+.contact-aside .card h3{margin-bottom:10px}
+.socials{display:flex;gap:12px}
+.social{width:44px;height:44px;border:1px solid #eaeaea;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--text);transition:.25s}
+.social:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+.logos .logo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.logos .logo-strip img{width:100%;height:64px;object-fit:contain;filter:grayscale(100%);opacity:.7;background:#fafafa;border:1px solid #eee;border-radius:10px;padding:6px}
+
+@media (max-width:1000px){
+  .contact-grid{grid-template-columns:1fr}
+  .contact-form .row{grid-template-columns:1fr}
+}
+
+/* Contact page refinements */
+.contact-form{box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{outline:none;border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px rgba(247,140,0,.12)}
+.contact-form .submit-btn{box-shadow:0 8px 16px rgba(247,140,0,.25)}
+.contact-form .submit-btn:hover{filter:brightness(0.95)}
+
+.contact-aside .card{box-shadow:0 10px 24px rgba(0,0,0,.05)}
+.social{transition:transform .2s ease, background .25s ease, border-color .25s ease, color .25s ease}
+.social:active{transform:scale(.96)}
+
+.mini-info .info-item{display:flex;gap:12px;align-items:center;padding:8px 0}
+.mini-info .info-item i{font-size:20px;color:var(--accent)}
+.mini-info h4{margin:0 0 2px 0}
+.mini-info p{margin:0;color:var(--muted)}
+
+/* Contact page additions */
+.contact-cta{padding:40px 28px}
+.contact-cta .cta-inner{background:linear-gradient(135deg,rgba(247,140,0,.12),rgba(0,0,0,0));border:1px solid #eaeaea;border-radius:16px;padding:24px;text-align:center}
+.contact-cta h2{font-size:28px;margin-bottom:6px}
+.contact-cta p{color:var(--muted);margin-bottom:12px}
+
+.contact-faq{padding:40px 28px}
+.contact-faq h2{font-size:24px;margin-bottom:12px}
+.faq-list{border-top:1px solid #eaeaea}
+.faq-item{border-bottom:1px solid #eaeaea}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;background:none;border:none;color:var(--text);font-size:16px;cursor:pointer}
+.faq-q i{transition:transform .2s}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{display:none;color:var(--muted);padding:0 0 12px 0}
+.faq-item.open .faq-a{display:block}
+
+.submit-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;border-radius:12px;padding:12px 16px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;gap:8px;opacity:0;pointer-events:none;z-index:200}
+.submit-toast i{color:#4ade80}
+
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+
+/* Contact grid restructure */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+@media (max-width:1000px){.contact-grid{grid-template-columns:1fr}}
+
+/* Sticky aside on wide screens */
+@media (min-width:1000px){
+  .contact-aside{position:sticky; top:90px}
+}
+
+/* Trusted by logos under hero */
+.contact-trust{padding:10px 0 24px}
+.contact-trust .logo-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:center}
+.contact-trust .logo-row img{width:100%;height:56px;object-fit:contain;filter:grayscale(100%);opacity:.7;background:#fafafa;border:1px solid #eee;border-radius:10px;padding:6px}
+@media (max-width:800px){.contact-trust .logo-row{grid-template-columns:repeat(3,1fr)}}
+
+/* Contact page navbar refresh */
+.contact-page-root nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:#ffffff;border-bottom:1px solid #eaeaea}
+.contact-page-root nav .nav_logo img{height:42px;filter:none}
+.contact-page-root nav ul{display:flex;gap:18px;list-style:none}
+.contact-page-root nav a{color:#444}
+.contact-page-root nav a:hover{color:#000}
+
+/* Contact page refined background/contrast */
+.contact-page-root{background:#ffffff;color:#1b1b1b}
+.contact-page-root .contact-hero{padding:70px 0 24px}
+.contact-page-root .contact-form{background:#ffffff}
+.contact-page-root .contact-aside .card{background:#ffffff}
+.contact-page-root .contact-cta .cta-inner{background:linear-gradient(135deg,rgba(247,140,0,.10),rgba(0,0,0,0))}
+
+
+/* Mobile-only: reset absolute layouts so sections don't overlap */
+@media (max-width:768px){
+  /* Section 2 */
+  .section-2{padding:24px 16px}
+  .section-2 h1{position:static; left:auto; top:auto; transform:none; margin:6px 0 12px}
+  .section-2 .carousel-wrapper{position:static; left:auto; top:auto; transform:none; width:100%; height:auto; margin:10px 0 14px}
+  .section-2 .slides-holder{position:static}
+  .section-2 .left-button, .section-2 .right-button{display:none}
+
+  /* Section 5 */
+  .section-5 .video-box, .section-5 .content-section-5{position:static; left:auto; right:auto; top:auto; transform:none; width:100%}
+  .section-5 .content-section-5 h1, .section-5 .content-section-5 p{width:100%}
+  .section-5{padding-top:16px; padding-bottom:16px}
+
+  /* Section 7 */
+  .section-7 h2, .section-7 h1, .section-7 p, .section-7 a{position:static; left:auto; top:auto; transform:none; margin:6px 0}
+  .section-7{height:auto}
+  .section-7::after{display:none}
+  .col-section-7{position:static; top:auto; height:auto}
+
+  /* Section 8 */
+  .section-8 .content-section-8{margin-top:4px}
+}
+
+/* Section 3: simplify oversized marquee texts on mobile */
+@media (max-width:768px){
+  .section-3{height:auto; min-height:auto; padding:24px 0}
+  .show-me, .passions{position:static; transform:none; width:100%; height:auto; left:auto; top:auto; bottom:auto}
+  .show-me p, .passions p{font-size:clamp(26px,9vw,36px); text-align:center; -webkit-text-stroke-width:0}
+}
+
+/* Mobile-only: ensure sections and inner content have enough height */
+@media (max-width:768px){
+  .section-1, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9,
+  .services, .work, .contact{ min-height: 260px; }
+  .content-section-5, .content-section-8, .section-9 .section-9-container, .dev-section-visual, .dev-testimonials, .contact-inner{ min-height: 220px; }
+}
+
+/* Stronger mobile resets: disable loaders and remove forced min-heights */
+@media (max-width:768px){
+  .button-loader, .loader{display:none !important}
+  .section-1, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9,
+  .services, .work, .contact{ min-height: unset !important; }
+  .content-section-5, .content-section-8, .section-9 .section-9-container, .dev-section-visual, .dev-testimonials, .contact-inner{ min-height: unset !important; }
+}
+
+/* Herobox: auto height on mobile */
+@media (max-width:768px){
+  .herobox{height:auto !important; min-height:auto !important}
+}
+
+/* Mobile restructure: keep desktop intact, ensure no collapsing and maintain animations */
+@media (max-width:768px){
+  body{overflow-x:hidden}
+  nav + .herobox{margin-top:6px}
+
+  /* Section paddings so elements that need more space get it */
+  .section-1, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7, .section-8, .section-9,
+  .services, .work, .contact{ padding-left:16px; padding-right:16px }
+
+  /* Keep carousels usable via touch scroll; hide desktop nav arrows only on mobile */
+  .section-2 .left-button, .section-2 .right-button{display:none !important}
+  .section-2 .carousel-wrapper{overflow-x:auto; -webkit-overflow-scrolling:touch}
+
+  /* Ensure swiper fits vertically */
+  .swiper{height:auto}
+
+  /* FAQ rows: reveal answers block-style when toggled; retain JS behavior */
+  .faq-row .faq-answer{display:none}
+  .faq-row.open .faq-answer{display:block}
+}
+
+/* Very small phones: give headings and marquee extra vertical room */
+@media (max-width:400px){
+  .section-3 .show-me p, .section-3 .passions p{margin:6px 0}
+  .section-5 .content-section-5 h1{margin-top:8px}
+}
+
+/* Section 9: remove absolute centering and let content flow */
+@media (max-width:900px){
+  .section-9{height:auto !important; min-height:auto !important; padding:24px 16px}
+  .section-9-container{position:static; left:auto; top:auto; transform:none; width:100%; height:auto; gap:12px}
+  .row-section-9{height:auto; padding:10px 6px}
+  .row-section-9 h1{font-size:clamp(18px,5.2vw,24px)}
+  .row-section-9 .icon{width:54px; height:54px; font-size:20px}
+}
+
+/* Final sanity: prevent overlap by resetting overly absolute children within sections on mobile */
+@media (max-width:768px){
+  .section-3 > *, .section-4 > *, .section-5 > *, .section-6 > *, .section-7 > *, .section-8 > *, .section-9 > *{
+    max-width:100%;
+  }
+}
+
+/* Section 4: stack columns and reset absolute positioning on mobile */
+@media (max-width:900px){
+  .section-4{height:auto !important; min-height:auto !important; padding:24px 16px}
+  .left-section-4, .right-section-4{position:static; transform:none; width:100%; height:auto}
+  .main-logo{width:100%; height:auto}
+  .main-logo img{width:100%; height:auto}
+  .top-logo1, .top-logo2, .bottom-logo1, .bottom-logo2{display:none}
+  .left-section-4 h1{font-size:clamp(24px,6vw,34px)}
+  .left-section-4 p{font-size:clamp(14px,3.8vw,18px); line-height:1.6}
+}
+
+/* Section 6: convert complex absolute layout to simple vertical stack */
+@media (max-width:900px){
+  .section-6{height:auto !important; min-height:auto !important; padding:24px 16px}
+  .left-section-6, .right-section-6{position:static; transform:none; width:100%; height:auto}
+  .right-section-6{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+  .col-1-section-6, .col-2-section-6{position:static; width:100%; height:auto}
+  .col-2-section-6 .card-1-section-6{height:auto}
+  .card-1-section-6{height:auto}
+  .card-1-section-6 img{width:100%; height:auto; display:block}
+  .left-section-6 h1{font-size:clamp(22px,6vw,30px)}
+  .left-section-6 p{font-size:clamp(14px,3.8vw,18px); line-height:1.6}
+}
+
+@media (max-width:560px){
+  .right-section-6{grid-template-columns:1fr}
+}
+
+/* Navbar/logo fine-tune on smaller phones */
+@media (max-width:560px){
+  nav{height:auto; padding:12px 14px}
+  nav .nav_logo img{height:28px}
+  .contact_btn{height:auto; padding:8px 12px}
+}
+
+/* ==================== SECTION 8 DESKTOP LAYOUT ==================== */
+/* Desktop: Content on left, Swiper on right */
+@media (min-width: 1000px) {
+  .section-8{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: relative;
+  }
+
+  .swiper {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60%; /* Swiper on the right side */
+  }
+
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .content-section-8{
+    width: 40%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6%; /* Content on the left side */
+  }
+  .content-section-8 h2{
+    font-family: "SF Pro";
+    font-size: 14px;
+    letter-spacing: 10px;
+    color: #f78c00;
+  }
+  .content-section-8 h1{
+    font-family: "Media";
+    font-size: 50px;
+    margin-top: 12px;
+  }
+  .content-section-8 p{
+    font-family: "SF Pro";
+    font-size: 22px;
+    width: 80%;
+    line-height: 35px;
+    margin-top: 20px;
+  }
+  .content-section-8 p span{
+    font-weight: 900;
+  }
+}

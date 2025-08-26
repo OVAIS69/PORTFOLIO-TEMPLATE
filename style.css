@@ -1,0 +1,470 @@
+@font-face {
+    font-family: "Media";
+    src: url('./Fonts/font\ 1.otf');
+}
+@font-face {
+    font-family: "SF Pro";
+    src: url('./Fonts/font\ 2.otf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+html{ scroll-behavior: smooth; }
+.back-to-top{ position: fixed; right: 16px; bottom: 16px; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #111; color: #fff; border: 1px solid rgba(255,255,255,.12); box-shadow: 0 10px 24px rgba(0,0,0,.15); opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease; z-index: 120 }
+.back-to-top.show{ opacity: 1; pointer-events: auto; transform: translateY(0) }
+
+/* Intro video overlay */
+.intro-video-overlay{
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity .25s ease, transform .8s ease-in-out;
+}
+.intro-video-overlay.fade{opacity: 0;}
+.intro-video-overlay.leave{
+    transform: translateY(-100%);
+}
+.intro-video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+/* Account for device safe areas and small screens */
+.intro-video-overlay{padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+@media (max-height: 560px) and (orientation: landscape){
+  .intro-video{object-fit: contain; background:#000}
+}
+@media (max-width: 420px){
+  .intro-video{object-fit: cover}
+}
+/* Hide intro overlay entirely on mobile as fallback */
+@media (max-width: 768px){
+  .intro-video-overlay{ display: none !important }
+}
+
+/* <====================================================== Button Loader Coded Here ======================================================> */
+
+.button-loader{
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+    display: none;
+}
+.lft-slide{
+    width: 50%;
+    height: 100%;
+    background-color: #191919;
+    position: absolute;
+    left: -100%;
+}
+.rgt-slide{
+    width: 50%;
+    height: 100%;
+    background-color: #191919;
+    position: absolute;
+    right: -100%;
+}
+
+
+/* <====================================================== Loading Screen Coded Here ======================================================> */
+
+
+
+.loader_wrapper{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 10000;
+    background-color: transparent;
+    /* display: none;   */
+}
+.left_screen{
+    width: 50%;
+    height: 100%;
+    background-color: #191919;
+    position: absolute;
+    left: 0%;
+}
+.right_screen{
+    width: 50%;
+    height: 100%;
+    background-color: #191919;
+    position: absolute;
+    right: 0%;
+}
+.loading_logo{
+    width: 20%;
+    height: 25%;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    overflow: hidden;
+}
+.loading_logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* <====================================================== Cursor Coded Here ======================================================> */
+
+.cursor{
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    pointer-events: none;
+    opacity : 0%;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 25px rgba(0, 0, 0, 0.6));
+}
+.cursor img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+    animation: luffyFloat 2s ease-in-out infinite;
+}
+
+@keyframes luffyFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(0deg); }
+    75% { transform: translateY(-3px) rotate(-1deg); }
+}
+
+/* <====================================================== Navbar Coded Here ======================================================> */
+
+nav{
+    width: 100%;
+    height: 100px;
+    position: relative;
+    top: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "SF Pro";
+    padding: 0 100px;
+}
+.hamburger{display:none}
+.nav_logo{
+    width: 12%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.nav_logo img{
+    width: 230%;
+    height: 230%;
+    object-fit: cover;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    margin: 0 35px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(31, 31, 31);
+    font-weight: 300;
+}
+
+nav a.contact_btn{
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    transform-origin: center;
+    transition: .5s ease;
+}
+nav a.contact_btn:hover{
+    transform: scaleX(1.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+}
+
+.toggle-menu{
+    width: 40%;
+    height: 100vh;
+    background-color: #191919;
+    position: absolute;
+    z-index: 50;
+    top: 0%;
+    right: -100%;
+    transition: 1s linear;
+}
+.toggle-icon{
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    position: absolute;
+    top: 4.5%;
+    right: 2%;
+    display: none;
+}
+.toggle-icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.toggle-icon-black{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+}
+.toggle-icon-black img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.toggle-menu ul{
+    list-style: none;
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    text-align: right;
+}
+.toggle-menu ul li{
+    margin: 50px 0px;
+}
+.toggle-menu ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: "SF Pro";
+    font-size: 32px;
+    transition: .2s ease;
+}
+.toggle-menu ul li a:hover{
+    color: orange;
+}
+
+/* Desktop logo sizing override for cleaner look */
+nav .nav_logo img{ height:36px; width:auto; object-fit: contain }
+
+/* <====================================================== Herobox Coded Here ======================================================> */
+
+.herobox{
+    width: 100%;
+    height: 82vh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+}
+.herobox .intro{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "SF Pro";
+    font-size: 27px;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    opacity: 0%;
+    transform: translateX(-50%);
+}
+.herobox .intro a{
+    text-decoration: none;
+    color: rgb(45, 45, 45);
+}
+.herobox .passion_1{
+    width: 70%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    opacity: 0%;
+    transform: translateX(-50%);
+}
+.herobox .passion_1 a{
+    text-decoration: none;
+    font-size: 170px;
+    font-family: "Media";
+    color: rgb(25, 25, 25);
+    -webkit-text-stroke: .8px #191919;
+    transition: .5s ease;
+}
+
+.herobox .passion_2{
+    width: 68%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    opacity: 0%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+.herobox .passion_2 a{
+    text-decoration: none;
+    font-size: 180px;
+    font-family: "Media";
+    color: transparent;
+    -webkit-text-stroke: .8px #191919;
+    transition: .5s ease;
+}
+.herobox_image{
+    width: 27%;
+    height: 75%;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0%;
+}
+.herobox_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    transform: scale(1.1);
+}
+
+.herobox .passion_1_outline{
+    width: 70%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0%;
+}
+.herobox .passion_1_outline a{
+    text-decoration: none;
+    font-size: 170px;
+    font-family: "Media";
+    color: transparent;
+    -webkit-text-stroke: .8px #ffffff;
+    transition: .5s ease;
+    pointer-events: none;
+}
+
+.herobox .passion_2_outline{
+    width: 70%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0%;
+}
+.herobox .passion_2_outline a{
+    text-decoration: none;
+    font-size: 180px;
+    font-family: "Media";
+    color: transparent;
+    -webkit-text-stroke: .8px #ffffff;
+    transition: .5s ease;
+    pointer-events: none;
+}
+.herobox p{
+    font-family: "SF Pro";
+    font-size: 28px;
+    position: absolute;
+    bottom: 18%;
+    left: 12%;
+    opacity: 0%;
+}
+.herobox a.designer_btn{
+    width: 180px;
+    height: 45px;
+    background-color: #191919;
+    position: absolute;
+    bottom: 5%;
+    left: 38%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s linear;
+    opacity: 0%;
+    text-decoration: none;
+    color: white;
+    font-family: "SF Pro";
+    z-index: 50;
+}
+
+.herobox a.designer_btn:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+    bottom: 6%;
+}
+
+.herobox a.photographer_btn{
+    width: 200px;
+    height: 45px;
+    background-color: #191919;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s linear;
+    opacity: 0%;
+    text-decoration: none;
+    color: white;
+    font-family: "SF Pro";
+}
+
+.herobox a.photographer_btn:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.543);
+    bottom: 6%;
+}

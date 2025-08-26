@@ -1,0 +1,130 @@
+@media screen and (max-width : 1440px) {
+
+    .toggle-menu{
+        display: none;
+    }
+    .herobox_image{
+        width: 40%;
+    }
+    .herobox_image img{
+        transform: scale(0.9);
+    }
+
+    .herobox .passion_2 a{
+        font-size: 160px;
+    }
+    .herobox .passion_2_outline a{
+        font-size: 160px;
+    }
+    .herobox p{
+        font-size: 18px;
+        left: 15%;
+        bottom: 20%;
+    }
+    .herobox a.designer_btn{
+        left: 35%;
+    }
+}
+
+@media screen and (max-width : 1024px) {
+
+    nav a.contact_btn{
+        width: 140px;
+        font-size: 15px;
+        height: 45px;
+    }
+    .nav_logo{
+        width: 15%;
+    }
+    .herobox .intro{
+        font-size: 25px;
+    }
+    .herobox .passion_1 a{
+        font-size: 150px;
+    }
+    .herobox .passion_1_outline a{
+        font-size: 150px;
+    }
+    .herobox .passion_2{
+        width: 80%;
+    }
+    .herobox .passion_2 a{
+        font-size: 140px;  
+    }
+    .herobox .passion_2_outline a{
+        font-size: 140px; 
+    }
+    .herobox_image{
+        width: 40%;
+    }
+    .herobox_image img{
+        transform: scale(1);
+    }
+    .herobox p{
+        font-size: 18px;
+        left: 7%;
+        bottom: 20%;
+    }
+    .herobox a.designer_btn{
+        width: 160px;
+        font-size: 15px;
+        left: 33%;
+    }
+    .herobox a.photographer_btn{
+        width: 180px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body{ overflow: auto; }
+    nav{ height: 80px; padding: 0 16px; position: relative; z-index: 100; }
+    .nav_logo{ width: 28%; }
+    nav ul{ display: none; }
+    nav a.contact_btn{ display: none; }
+    /* Three-line toggle like contact */
+    nav .nav-toggle{ display:flex; flex-direction:column; gap:4px; background:none; border:none; cursor:pointer; position:relative; z-index:200; pointer-events:auto }
+    nav .nav-toggle .bar{ width:24px; height:2px; background:#1b1b1b; display:block; border-radius:2px }
+    .toggle-icon{ display: none; }
+    .toggle-menu{ display: none; }
+    /* Dropdown inside nav when open */
+    nav ul{ position:absolute; right:16px; top:80px; background:#fff; border:1px solid #eaeaea; border-radius:12px; padding:10px; display:flex !important; flex-direction:column; gap:6px; min-width:160px; opacity:0; pointer-events:none; transform:translateY(-6px); box-shadow:0 12px 28px rgba(0,0,0,.06); z-index:190 }
+    nav.open ul{ opacity:1; pointer-events:auto; transform:translateY(0) }
+
+    .herobox{ height: 92vh; min-height: 640px; }
+    .herobox .intro{ font-size: 18px; top: 6%; text-align: center; width: 90%; }
+    .herobox .passion_1{ top: 16%; }
+    .herobox .passion_1 a{ font-size: 90px; line-height: .9; text-align: center; }
+    .herobox .passion_1_outline a{ font-size: 90px; }
+    .herobox .passion_2{ width: 90%; top: 48%; }
+    .herobox .passion_2 a{ font-size: 96px; line-height: .9; text-align: center; }
+    .herobox .passion_2_outline a{ font-size: 96px; }
+    .herobox_image{ width: 60%; top: 22%; }
+    .herobox p{ font-size: 16px; left: 50%; transform: translateX(-50%); bottom: 24%; text-align: center; width: 84%; }
+    .herobox a.designer_btn{ left: 50%; transform: translateX(-50%); bottom: 14%; width: 220px; z-index: 60; }
+    .herobox a.photographer_btn{ left: 50%; transform: translateX(-50%); bottom: 6%; width: 220px; z-index: 60; }
+    .cursor{ display: none; }
+}
+
+@media screen and (max-width: 480px) {
+    .toggle-menu{ width: 85%; padding-top: 60px; }
+    .herobox{ min-height: 560px; }
+    .herobox .intro{ font-size: 16px; width: 92%; }
+    .herobox .passion_1{ top: 18%; }
+    .herobox .passion_1 a{ font-size: 68px; }
+    .herobox .passion_1_outline a{ font-size: 68px; }
+    .herobox .passion_2{ top: 50%; }
+    .herobox .passion_2 a{ font-size: 72px; }
+    .herobox .passion_2_outline a{ font-size: 72px; }
+    .herobox_image{ width: 75%; top: 24%; }
+    .herobox p{ font-size: 15px; left: 50%; transform: translateX(-50%); bottom: 26%; width: 88%; }
+    .herobox a.designer_btn{ width: 84%; max-width: 340px; bottom: 18%; }
+    .herobox a.photographer_btn{ width: 84%; max-width: 340px; bottom: 9%; }
+}
+
+@media screen and (max-width: 360px) {
+    .herobox .passion_1 a{ font-size: 56px; }
+    .herobox .passion_2 a{ font-size: 60px; }
+    .herobox_image{ width: 80%; top: 26%; }
+    .herobox a.designer_btn{ bottom: 20%; }
+}
